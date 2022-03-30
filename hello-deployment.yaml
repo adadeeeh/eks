@@ -27,7 +27,7 @@ metadata:
 spec:
   selector:
     app: hello
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3000
