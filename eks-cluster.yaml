@@ -29,3 +29,5 @@ nodeGroups:
   - name: ng-1
     instanceType: t2.micro
     desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
