@@ -25,3 +25,6 @@ This repository is used to learn EKS
 2. https://github.com/weaveworks/eksctl/blob/main/examples/04-existing-vpc.yaml
 3. https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html
 4. https://www.eksworkshop.com/beginner/050_deploy/
+5. https://github.com/aws-containers/ecsdemo-frontend
+6. https://github.com/aws-containers/ecsdemo-nodejs
+7. https://github.com/aws-containers/ecsdemo-crystal
