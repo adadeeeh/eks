@@ -17,9 +17,11 @@ This repository is used to learn EKS
 3. Create deployment with [hello-deployment.yaml](hello-deployment.yaml)
 4. (Optional) Create kubernetes dashboard. The documentation in reference number 3
 5. Access service with load balancer
+6. (Optional) Deploy some microservices according to reference number 4. Change instance type to t2.small because not enough resource.
 
 # References:
 
 1. https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html
 2. https://github.com/weaveworks/eksctl/blob/main/examples/04-existing-vpc.yaml
 3. https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html
+4. https://www.eksworkshop.com/beginner/050_deploy/
