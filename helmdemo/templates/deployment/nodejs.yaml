@@ -6,7 +6,7 @@ metadata:
     app: ecsdemo-nodejs
   namespace: default
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: ecsdemo-nodejs
@@ -21,7 +21,7 @@ spec:
         app: ecsdemo-nodejs
     spec:
       containers:
-        - image: brentley/ecsdemo-nodejs:latest
+        - image: {{ .Values.nodejs.image }}:{{ .Values.version }}
           imagePullPolicy: Always
           name: ecsdemo-nodejs
           ports:
