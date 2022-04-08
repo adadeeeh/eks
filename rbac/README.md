@@ -1,4 +1,6 @@
-# RBAC
+# Role Based Access Control (RBAC) in Amazon EKS
+
+# Steps
 
 1. Using EKS Admin user, create test namespace and deployment
 
@@ -82,3 +84,9 @@
     ```
 
     Delete user mapping in step 5.
+
+# References
+
+1. https://www.eksworkshop.com/beginner/090_rbac/
+2. https://towardsaws.com/controlling-aws-eks-access-using-aws-iam-and-kubernetes-rbac-9309d5ac4d11
+3. https://docs.bitnami.com/tutorials/configure-rbac-in-your-kubernetes-cluster/
