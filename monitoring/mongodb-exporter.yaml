@@ -1,0 +1,9 @@
+mongodb:
+  uri: "mongodb://mongodb-service:27017"
+
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "metrics"
+
+serviceMonitor:
+  enabled: false
