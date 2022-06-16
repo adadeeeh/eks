@@ -13,7 +13,7 @@ spec:
         app: fastapi
     spec:
       containers:
-        - image: adadeeeh/fastapi-cicd:0.1.0
+        - image: adadeeeh/fastapi-cicd:0.2.0
           name: fastapi
           ports:
             - containerPort: 8000
