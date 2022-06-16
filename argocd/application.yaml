@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fastapi
+  namespace: fastapi
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/adadeeeh/eks.git
+    targetRevision: HEAD
+    path: argocd/manifest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fastapi
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
