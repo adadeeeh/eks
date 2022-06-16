@@ -2,12 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: fastapi
-  namespace: fastapi
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/adadeeeh/eks.git
-    targetRevision: HEAD
     path: argocd/manifest
   destination:
     server: https://kubernetes.default.svc
