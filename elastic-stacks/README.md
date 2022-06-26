@@ -12,7 +12,7 @@ This folder is used to try Elastic Stacks using Elastic Cloud on Kubernetes (ECK
    eksctl create cluster -f eks-cluster.yaml
    ```
 
-2. Install CRD
+2. Install Custom Resource Definition
 
    ```
    kubectl create -f https://download.elastic.co/downloads/eck/2.2.0/crds.yaml
@@ -81,10 +81,61 @@ This folder is used to try Elastic Stacks using Elastic Cloud on Kubernetes (ECK
 
    Use the same username and password as Elasticsearch
 
-6. Filebeat on ECK
+6. Beat on ECK
+
+   - Filebeat  
+     Filebeat with autodiscover required Beat Pods to interact with Kubernetes API. Specific permission are needed to allow this functionality.
+
+     Deploy Filebeat
+
+     ```
+     kubectl apply -f filebeat.yaml
+     ```
+
+   - Metricbeat  
+     Same with Filebeat. Metricbeat required Beat Pods to interact with Kubernetes API. Specific permission are needed to allow this functionality.
+
+     Depoy Metricbeat
+
+     ```
+     kubectl apply -f metricbeat.yaml
+     ```
+
+   - Heartbeat  
+     Deploy Heartbeat
+
+     ```
+     kubectl apply -f heartbeat.yaml
+     ```
+
+7. Access Beat on Kibana in Observability menu  
+   ![alt text](overview.png)
 
 ## Clean Up
+
+1. Delete all Beat
+
+   ```
+   kubectl delete -f heartbeat.yaml
+   kubectl delete -f metricbeat.yaml
+   kubectl delete -f filebeat.yaml
+   ```
+
+2. Delete Kibana & Elasticsearch
+
+   ```
+   kubectl delete -f kibana.yaml
+   kubectl delete -f elasticsearch.yaml
+   ```
+
+3. Delete Operator & Custom Resource Definition
+   ```
+   kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/operator.yaml
+   kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/crds.yaml
+   ```
 
 ## References
 
 1. https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html
+2. https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-beat-configuration.html
+3. https://github.com/elastic/cloud-on-k8s/tree/2.2/config/recipes/beats
