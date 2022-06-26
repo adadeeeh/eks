@@ -141,9 +141,16 @@ This folder is used to try Elastic Stacks using Elastic Cloud on Kubernetes (ECK
    ```
 
 4. Delete Operator & Custom Resource Definition
+
    ```
    kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/operator.yaml
    kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/crds.yaml
+   ```
+
+5. Delete Kubernetes cluster
+
+   ```
+   eksctl delete cluster -f eks-cluster.yaml
    ```
 
 ## References
