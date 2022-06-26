@@ -108,12 +108,24 @@ This folder is used to try Elastic Stacks using Elastic Cloud on Kubernetes (ECK
      kubectl apply -f heartbeat.yaml
      ```
 
-7. Access Beat on Kibana in Observability menu  
+7. Deploy simple service
+
+   ```
+   kubectl apply -f ../argocd/manifest
+   ```
+
+8. Access Beat on Kibana in Observability menu  
    ![alt text](overview.png)
 
 ## Clean Up
 
-1. Delete all Beat
+1. Delete simple service
+
+   ```
+   kubectl delete -f ../argocd/manifest
+   ```
+
+2. Delete all Beat
 
    ```
    kubectl delete -f heartbeat.yaml
@@ -121,14 +133,14 @@ This folder is used to try Elastic Stacks using Elastic Cloud on Kubernetes (ECK
    kubectl delete -f filebeat.yaml
    ```
 
-2. Delete Kibana & Elasticsearch
+3. Delete Kibana & Elasticsearch
 
    ```
    kubectl delete -f kibana.yaml
    kubectl delete -f elasticsearch.yaml
    ```
 
-3. Delete Operator & Custom Resource Definition
+4. Delete Operator & Custom Resource Definition
    ```
    kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/operator.yaml
    kubectl delete -f https://download.elastic.co/downloads/eck/2.2.0/crds.yaml
