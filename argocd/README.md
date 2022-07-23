@@ -51,10 +51,12 @@ This folder is used to try Continous Delivery using Argo CD
    kubectl apply -f application.yaml
    ```
 
-9. Clean Up  
-   Delete application in Argo CD dashboard  
-   Delete Argo CD  
-   Delete K8s cluster
+9. Clean Up
+   ```
+   kubectl delete -f application.yaml
+   kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+   eksctl delete cluster -f eks-cluster.yaml
+   ```
 
 ## References
 
